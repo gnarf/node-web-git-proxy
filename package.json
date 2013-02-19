@@ -1,0 +1,15 @@
+{
+  "name": "web-git-proxy",
+  "version": "0.0.1",
+  "author": "jQuery Project",
+  "description": "",
+  "homepage": "https://github.com/jquery/node-web-git-proxy",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jquery/node-web-git-proxy.git"
+  },
+  "dependencies": {
+    "grunt": "0.3.17",
+    "git-tools": "0.0.2"
+  }
+}
