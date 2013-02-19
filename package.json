@@ -2,7 +2,7 @@
   "name": "web-git-proxy",
   "version": "0.0.1",
   "author": "jQuery Project",
-  "description": "",
+  "description": "Collection of node tools for creating an updating git proxy like http://view.jquery.org/",
   "homepage": "https://github.com/jquery/node-web-git-proxy",
   "repository": {
     "type": "git",
