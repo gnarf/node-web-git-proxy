@@ -70,6 +70,23 @@ grunt.registerTask( "check-versions", function() {
 	update( done );
 });
 
-grunt.registerTask( "cron", [ "update-repo", "check-versions" ]);
+grunt.registerTask( "check-config", function() {
+	var done = this.async(),
+		errors = [];
+	if ( !config.repo ) {
+		errors.push( "Missing repo in config.json" );
+	}
+	if ( !config.title ) {
+		errors.push( "Missing title in config.json" );
+	}
+	if ( errors.length ) {
+		grunt.verbose.error();
+		done( new Error( errors.join(", ") ) );
+	} else {
+		done();
+	}
+});
+
+grunt.registerTask( "cron", [ "check-config", "update-repo", "check-versions" ]);
 
 };
