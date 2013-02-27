@@ -3,3 +3,4 @@ node_modules
 dist/
 public_html/
 repo.git/
+build-command.sh

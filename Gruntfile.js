@@ -15,6 +15,24 @@ grunt.initConfig({
 
 grunt.registerTask( "default", [ "jshint", "cron" ] );
 
+grunt.registerTask( "clean", function() {
+	var data;
+	try {
+		data = require( config.output + "/data.json" );
+	} catch( e ) {
+		console.log( "No data.json found" );
+		return;
+	}
+	Object.keys( data.branches || {} )
+		.concat( Object.keys( data.tags || {} ) )
+		.forEach(function( directory ) {
+			grunt.log.writeln( "Removing " + directory );
+			grunt.file.remove( config.output + "/" + directory );
+		});
+	grunt.log.writeln( "Removing data.json" );
+	grunt.file.remove( config.output + "/data.json" );
+});
+
 grunt.registerTask( "update-repo", function() {
 	function thenFetch( err ) {
 		if ( err ) {
