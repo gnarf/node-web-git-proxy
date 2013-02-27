@@ -9,7 +9,10 @@
     "url": "git://github.com/jquery/node-web-git-proxy.git"
   },
   "dependencies": {
-    "grunt": "0.3.17",
-    "git-tools": "0.0.2"
+    "async": "0.1.22",
+    "grunt": "0.4.0",
+    "grunt-contrib-jshint": "0.1.1",
+    "git-tools": "0.0.2",
+    "underscore": "1.4.4"
   }
 }
