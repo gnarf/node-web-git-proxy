@@ -1,4 +1,5 @@
 #!/bin/bash
+cd $(dirname $0)
 if [ -f .lock ] 
 then
         echo "Lock file in place, refusing to do anything"
