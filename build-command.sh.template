@@ -1,0 +1,22 @@
+#!/bin/bash -x
+{
+	set -e
+	if test -f package.json ; then
+		npm --no-color prune
+		npm --no-color install
+		npm --no-color update
+	fi
+
+	if test -f grunt.js ; then
+		grunt --no-color --gruntfile grunt.js
+	elif test -f Gruntfile.js ; then
+		grunt --no-color --gruntfile Gruntfile.js
+	elif test -f Makefile ; then
+		make
+	elif test -f build/Makefile ; then
+		cd build
+		make
+	fi
+
+} > build.out.txt 2>&1
+
