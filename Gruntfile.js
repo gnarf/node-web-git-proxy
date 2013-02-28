@@ -27,10 +27,10 @@ grunt.registerTask( "clean", function() {
 		.concat( Object.keys( data.tags || {} ) )
 		.forEach(function( directory ) {
 			grunt.log.writeln( "Removing " + directory );
-			grunt.file.remove( config.output + "/" + directory );
+			grunt.file["delete"]( config.output + "/" + directory );
 		});
 	grunt.log.writeln( "Removing data.json" );
-	grunt.file.remove( config.output + "/data.json" );
+	grunt.file["delete"]( config.output + "/data.json" );
 });
 
 grunt.registerTask( "update-repo", function() {
