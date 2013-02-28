@@ -17,4 +17,4 @@ cd $dest
 git fetch
 git checkout --force $sha
 git reset --hard $sha
-git submodule update --init
+git submodule update --init || echo "Problem updating submodules, ignoring..."
