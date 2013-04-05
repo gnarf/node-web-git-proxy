@@ -1,4 +1,6 @@
 #!/bin/bash
+set -e
+set -x
 bare=$(pwd)
 sha=$1
 dest=$2
