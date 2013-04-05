@@ -13,12 +13,12 @@ then
 		rm -rf $dest
 		git clone $bare $dest
 		# trim extra refs
-		git for-each-ref --format="%(refname) %(objectname)" refs/heads | { while read entry ; do git update-ref -d $entry ; done }
+		git for-each-ref --format="%(refname) %(objectname)" refs/heads refs/tags | { while read entry ; do git update-ref -d $entry ; done }
 	fi
 else
 	git clone $bare $dest
 	# trim extra refs
-	git for-each-ref --format="%(refname) %(objectname)" refs/heads | { while read entry ; do git update-ref -d $entry ; done }
+	git for-each-ref --format="%(refname) %(objectname)" refs/heads refs/tags | { while read entry ; do git update-ref -d $entry ; done }
 fi
 cd $dest
 git fetch -fup origin $ref:$ref
