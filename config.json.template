@@ -2,5 +2,6 @@
 	"output": "public_html",
 	"working": "repo.git",
 	"repo": "https://github.com/jquery/jquery-ui.git",
-	"title": "jQuery UI"
+	"title": "jQuery UI",
+	"deleteTags": true
 }
